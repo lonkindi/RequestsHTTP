@@ -15,12 +15,11 @@ def translate_it(path_source, path_result, from_lang, to_lang='ru'):
     }
     response = requests.get(URL, params=params)
     json_ = response.json()
-    #print(params)
     text_r = ''.join(json_['text'])
 
     with open(path_result, 'w', encoding='utf-8') as file_r:
         file_r.write(text_r)
-        print(f'Файл : {path_source} переведён.\nРезультат перевода записан в : {path_result}')
+        print(f'Файл : {path_source} переведён.\nРезультат перевода записан в : {path_result}\n')
 
 
 if __name__ == '__main__':
