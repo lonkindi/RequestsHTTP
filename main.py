@@ -1,5 +1,6 @@
 import requests
 import os
+import upload
 
 API_KEY = 'trnsl.1.1.20190712T081241Z.0309348472c8719d.0efdbc7ba1c507292080e3fbffe4427f7ce9a9f0'
 URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
@@ -20,6 +21,7 @@ def translate_it(path_source, path_result, from_lang, to_lang='ru'):
     with open(path_result, 'w', encoding='utf-8') as file_r:
         file_r.write(text_r)
         print(f'Файл : {path_source} переведён.\nРезультат перевода записан в : {path_result}\n')
+        # upload.up_file(path_result)
 
 
 if __name__ == '__main__':
