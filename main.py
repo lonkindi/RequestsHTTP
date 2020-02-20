@@ -21,7 +21,7 @@ def translate_it(path_source, path_result, from_lang, to_lang='ru'):
     with open(path_result, 'w', encoding='utf-8') as file_r:
         file_r.write(text_r)
         print(f'Файл : {path_source} переведён.\nРезультат перевода записан в : {path_result}\n')
-        # upload.up_file(path_result)
+        #upload.up_file(path_result)
 
 
 if __name__ == '__main__':

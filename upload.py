@@ -1,5 +1,5 @@
 import requests
-
+import OAuth_Key
 
 def up_file(path_file):
     URL = 'https://cloud-api.yandex.net:443/v1/disk/resources/upload'
@@ -7,7 +7,7 @@ def up_file(path_file):
     params = {
         'path': f'netology/{path_file[13:]}'
     }
-    headers = {'Authorization': 'OAuth AgAAAAABdKdUAADLW6egcTMVvUn0hfpBVICKsro',
+    headers = {'Authorization': f'OAuth {OAuth_Key.getOAuth()}',
                'Accept': 'application/json'}
     res = requests.get(URL, params=params, headers=headers)
     URL = res.json()['href']
